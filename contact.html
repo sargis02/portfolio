@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - Nafiz Ahmed Sargis</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Header section - same on all pages -->
+    <nav class="main-nav">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo">Nafiz Ahmed Sargis</a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+          <li><a href="interests.html">Interests</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="contact-wrapper">
+        <!-- Left side: contact form -->
+        <div class="contact-form-section">
+          <h2>Get In Touch</h2>
+          <p>
+            I'd love to hear from you! Whether it's about an internship, a
+            project, or just to say hi.
+          </p>
+
+          <!-- Contact form with fieldsets and labels -->
+          <form id="contact-form" action="#" method="POST">
+            <!-- Personal Info fieldset -->
+            <fieldset>
+              <legend>Your Details</legend>
+
+              <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="e.g. Jane Smith"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="e.g. jane@example.com"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="e.g. (123) 456-7890"
+                  required
+                />
+              </div>
+            </fieldset>
+
+            <!-- Message fieldset -->
+            <fieldset>
+              <legend>Your Message</legend>
+
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <!-- Dropdown select for subject -->
+                <select id="subject" name="subject">
+                  <option value="">Please choose</option>
+                  <option value="internship">Internship Opportunity</option>
+                  <option value="collaboration">Project Collaboration</option>
+                  <option value="feedback">Website Feedback</option>
+                  <option value="general">General Enquiry</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message *</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Write your message here..."
+                  required
+                ></textarea>
+              </div>
+            </fieldset>
+
+            <!-- Preferences fieldset -->
+            <fieldset>
+              <legend>Preferences</legend>
+
+              <!-- Radio group for preferred contact method -->
+              <div class="form-group">
+                <label>Preferred contact method:</label>
+                <div class="radio-group">
+                  <label>
+                    <input
+                      type="radio"
+                      name="contact-pref"
+                      value="email"
+                      checked
+                    />
+                    Email
+                  </label>
+                  <label>
+                    <input type="radio" name="contact-pref" value="Phone" />
+                    Phone
+                  </label>
+                  <label>
+                    <input type="radio" name="contact-pref" value="either" />
+                    Either
+                  </label>
+                </div>
+              </div>
+
+              <!-- Checkbox for agreement -->
+              <div class="form-group">
+                <label class="checkbox">
+                  <input type="checkbox" id="agree" name="agree" required />
+                  <span
+                    >I agree that the information I've provided can be used to
+                    contact me back.</span
+                  >
+                </label>
+              </div>
+            </fieldset>
+
+            <!-- Submit and reset buttons (Only for show. Doesn't work because there's no backend)-->
+            <div class="form-buttons">
+              <button type="submit" class="btn btn-primary">
+                Send Message
+              </button>
+              <button type="reset" class="btn-reset">Clear Form</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Right side: contact info sidebar -->
+        <div class="contact-info">
+          <h3>Other Ways to Reach Me</h3>
+
+          <div class="info-box">
+            <div class="info-item">
+              <img src="images/gmail.png" alt="Gmail logo" class="info-icon" />
+              <div>
+                <strong>Email</strong><br />
+                sargis.australia@gmail.com
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon">📍</div>
+              <div>
+                <strong>Location</strong><br />
+                Coopers Plains, QLD, Australia
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon">🎓</div>
+              <div>
+                <strong>University</strong><br />
+                University of Southern Queensland, Springfield Campus
+              </div>
+            </div>
+          </div>
+
+          <div class="info-box">
+            <div class="info-item">
+              <img
+                src="images/linkedin.png"
+                alt="linkedin logo"
+                class="info-icon"
+              />
+              <div>
+                <strong>LinkedIn</strong><br />
+                <a
+                  href="https://www.linkedin.com/in/nafizahmedsargis/"
+                  style="color: var(--primary)"
+                  >nafizahmedsargis</a
+                >
+              </div>
+            </div>
+
+            <div class="info-item">
+              <img
+                src="images/github.png"
+                alt="GitHub logo"
+                class="info-icon"
+              />
+
+              <div>
+                <strong>GitHub</strong><br />
+                <a
+                  href="https://github.com/sargis02"
+                  style="color: var(--primary)"
+                  >sargis02</a
+                >
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon">⏰</div>
+              <div>
+                <strong>Response Time</strong><br />
+                Usually within 24-48 hours
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>Built by Nafiz Ahmed Sargis &copy; 2026</p>
+    </footer>
+  </body>
+</html>

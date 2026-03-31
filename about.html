@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Me - Nafiz Ahmed Sargis</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Header section - same on all pages -->
+    <nav class="main-nav">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo">Nafiz Ahmed Sargis</a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="interests.html">Interests</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <!-- TOP SECTION: sticky image floats beside bio text only -->
+      <div class="about-container">
+        <!-- I used this to create a 2-column layout -->
+        <!-- Left column: sticky image - only sticks within this container -->
+        <div class="about-left">
+          <!-- I remember sticky positioning was a bit confusing at first -->
+          <img
+            src="images/profile.jpg"
+            alt="Nafiz Ahmed Sargis"
+            class="about-img"
+          />
+        </div>
+
+        <!-- Right column: bio text only -->
+        <div class="about-right">
+          <h2>About Me</h2>
+          <!-- Wrapped text so I can control spacing and line height easier -->
+          <div class="bio-text">
+            <p>
+              Hey there! I'm Nafiz Ahmed Sargis,I'm from Bangladesh, and I'm
+              currently pursuing a Bachelor of Information Technology, majoring
+              in Software Application Development at the University of Southern
+              Queensland (UniSQ).
+            </p>
+            <p>
+              It all started with a simple wish: I wanted to see my name on the
+              internet. That curiosity pushed me to learn how websites are
+              built. When I built my first webpage, something inside me lit up.
+              The excitement of creating something from nothing, of making it
+              visible to the world that feeling told me I wanted to become a
+              software developer who builds real solutions to modern problems.
+            </p>
+            <p>
+              Since then, I've worked on university projects and taught myself
+              new things along the way. The project I'm most proud of is a Food
+              Traceability System for my Database Management Systems course. I
+              built the database using MySQL, created the front end with PHP,
+              CSS, and JavaScript, and used Git and GitHub to manage my code. I
+              learned about schema normalization, ER diagrams, and most
+              importantly how to collaborate with others. That project wasn't
+              just about writing code. It was about building something useful
+              with a team.
+            </p>
+            <p>
+              Honestly, this didn't come easy for me. I'm naturally shy. I used
+              to hold back my thoughts because I was afraid of being wrong. But
+              working in group projects has helped me grow. I'm not perfect yet,
+              but I'm learning to speak up, to share ideas, and to trust my
+              voice. Every small step counts.
+            </p>
+            <p>
+              What I value most is honesty, clear communication, helpfulness,
+              and directness. My friends would describe me as a helper. They
+              know they can come to me with any problem and even if I don't have
+              the answer, I will always try to help. My motto: "I don't have to
+              know everything. I just have to be willing to help."
+            </p>
+            <p>
+              Right now, I'm studying full-time. I don't have a job yet. But
+              outside of class, I follow technology trends, explore new tools
+              like AI, and keep practicing. I love learning what's new and
+              adapting to it.
+            </p>
+            <p>
+              This website is where I share my projects, my skills, my academic
+              journey, and some blogs about what I'm learning. It's also where I
+              finally put my name on the internet just like I always dreamed of.
+              I'm still learning. But I believe I have great potential. And I'm
+              on my way.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- END of two-column section - image no longer floats below here -->
+
+      <!-- FULL-WIDTH: Key Milestones -->
+      <section id="timeline">
+        <h2>Key Milestones</h2>
+
+        <div class="milestone">
+          <span class="milestone-year">2015</span>
+          <span class="milestone-text"
+            >Built my first ever website using Scratch — it was a fan page for
+            my favourite game. Very basic but I was so proud of it!</span
+          >
+        </div>
+
+        <div class="milestone">
+          <span class="milestone-year">2021</span>
+          <span class="milestone-text"
+            >Completed Higher Secondary Certificate (HSC) with a focus on
+            Science scoring GPA 5.0 from a well known college BAF SHAHEEN
+            COLLEGE KURMITOLA.</span
+          >
+        </div>
+
+        <div class="milestone">
+          <span class="milestone-year">2022</span>
+          <span class="milestone-text"
+            >After completing HSC, started my journey in Computer Science at
+            Independent University Bangladesh. Completed 76 credit hours there.
+            Learned programming fundamentals, data structures, algorithms,
+            Object-Oriented Programming, Database Management. Built several
+            projects during this time.</span
+          >
+        </div>
+
+        <div class="milestone">
+          <span class="milestone-year">2025</span>
+          <span class="milestone-text"
+            >After completing 76 credit hours, I transferred to University of
+            Southern Queensland. Started BSc in Information Technology. Learning
+            advanced concepts in software engineering, data science, and web
+            development.</span
+          >
+        </div>
+      </section>
+
+      <!-- FULL-WIDTH: Skills Table -->
+      <div id="skills-table-wrapper">
+        <h2>My Skills</h2>
+        <table id="skills-table">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Skill</th>
+              <th>Level</th>
+              <th>Evidence</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Web Development row group -->
+            <tr>
+              <td rowspan="3">Web Development</td>
+              <td>HTML5</td>
+              <td><span class="skill-level level-advanced">Advanced</span></td>
+              <td>
+                Built this portfolio + multiple coursework projects. Earned
+                certification in HTML5 from Codecademy.
+              </td>
+            </tr>
+            <tr>
+              <td>CSS3</td>
+              <td><span class="skill-level level-advanced">Advanced</span></td>
+              <td>
+                Flexbox, Grid, animations, responsive design. Earned
+                certification in CSS3 from Codecademy.
+              </td>
+            </tr>
+            <tr>
+              <td>JavaScript</td>
+              <td>
+                <span class="skill-level level-intermediate">Intermediate</span>
+              </td>
+              <td>
+                Used in several coursework projects and personal experiments.
+              </td>
+            </tr>
+
+            <!-- Programming row group -->
+            <tr>
+              <td rowspan="3">Programming</td>
+              <td>Python</td>
+              <td>
+                <span class="skill-level level-intermediate">Intermediate</span>
+              </td>
+              <td>
+                Used in different projects and earned the HackerRank Python
+                Basic Certificate. Used for control flow, operators, and string
+                manipulation.
+              </td>
+            </tr>
+            <tr>
+              <td>Java</td>
+              <td>
+                <span class="skill-level level-intermediate">Intermediate</span>
+              </td>
+              <td>Year 2 OOP module, Project work - Simulating BG Press</td>
+            </tr>
+            <tr>
+              <td>PHP</td>
+              <td>
+                <span class="skill-level level-intermediate">Intermediate</span>
+              </td>
+              <td>
+                Year 2 DBMS module, Project work - Food Traceability System
+              </td>
+            </tr>
+
+            <!-- Database row group -->
+            <tr>
+              <td rowspan="2">Database</td>
+              <td>SQL (MySQL)</td>
+              <td>
+                <span class="skill-level level-intermediate">Intermediate</span>
+              </td>
+              <td>
+                Database module, wrote queries for coursework project - Food
+                Traceability System
+              </td>
+            </tr>
+            <tr>
+              <td>Database Design</td>
+              <td>
+                <span class="skill-level level-intermediate">Intermediate</span>
+              </td>
+              <td>
+                Designed ER diagrams and relational database schemas for
+                coursework projects, including Food Traceability System.
+              </td>
+              <!-- Tools row -->
+            </tr>
+
+            <tr>
+              <td>Tools &amp;Other</td>
+              <td>Git / GitHub</td>
+              <td>
+                <span class="skill-level level-intermediate">Intermediate</span>
+              </td>
+              <td>Version control for all projects, team coursework</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <footer>
+      <p>Built by Nafiz Ahmed Sargis &copy;2026</p>
+    </footer>
+  </body>
+</html>

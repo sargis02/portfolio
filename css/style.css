@@ -1,0 +1,1140 @@
+/* ===================================
+   Main Stylesheet - My Portfolio
+   Nafiz Ahmed Sargis - Information Technology Student
+   ================================== */
+
+/* so i picked this blue color because it looks professional and tech-y, which is good for a student portfolio. then i added darker and lighter versions for hover states and backgrounds. storing these as variables mean if i want to change themes later i just edit these lines */
+/* I used CSS variables so I don’t repeat colors everywhere */
+:root {
+  --primary: #3b82f6;
+  --primary-dark: #2563eb;
+  --primary-light: #dbeafe;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --bg-white: #ffffff;
+  --border: #e2e8f0;
+  --shadow: rgba(0, 0, 0, 0.08);
+  --radius: 10px;
+}
+
+/* i had to reset all the default spacing that browsers add because it was messing up
+   my layout. without this, every element has its own margins and it gets messy.
+   box-sizing: border-box took me forever to understand but basically without it,
+   if i say width: 100% and add padding, it goes over 100% and messes everything up!
+   with border-box, padding is included in the width so things actually fit properly */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* AI-assisted: used AI to debug horizontal overflow issue caused by wide table,
+   applied overflow-x: hidden to prevent navbar breaking on mobile layout */
+
+body {
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  color: var(--text-main);
+  line-height: 1.7;
+  /* Prevent any element from causing horizontal scroll */
+  overflow-x: hidden;
+}
+
+/* ===========================================
+   NAVIGATION - same on all pages
+   ================================== */
+.main-nav {
+  background-color: var(--bg-white);
+  border-bottom: 1px solid var(--border);
+  padding: 0 40px;
+  /* i tried using position: fixed first because i wanted the navbar to always stay at the
+     top, but then when scrolling down it would cover the content which is annoying.
+     sticky is better because it stays at top but moves with the page when you reach
+     the bottom of the section. z-index: 100 makes sure it doesn't go behind other stuff */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.nav-logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  /* gap is SO much better than doing margin on each link. before i had to do margin-right
+     or margin-left and it was annoying. gap just spreads them evenly and it's cleaner */
+  gap: 8px;
+}
+
+/* when you hover over a link i want it to change color AND background at the same time,
+   and without transition it would just snap which looks terrible. the 0.3s makes it smooth
+   and natural. border-radius rounds the corners so the background color looks nice */
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-muted);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--primary);
+  background-color: var(--primary-light);
+}
+
+/* =================================================
+   GENERAL PAGE CONTAINER
+   ================================== */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 40px;
+  /* centers content and gives space around */
+}
+
+/* ==========================================================
+   BUTTONS - consistent across site
+   ================================== */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+/* Primary filled button */
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* Outlined button */
+.btn-outline {
+  background-color: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--primary);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* ===========================================
+   HOME PAGE
+   ============= */
+.home-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  /* calc(100vh - 64px) means: take the full height of the window and subtract the
+     navbar which is 64px. so the hero section fills the whole screen minus navbar which
+     looks really cool and professional on first load */
+  min-height: calc(100vh - 64px);
+  /* overflow hidden stops weird scrollbars from showing up when the about page
+     table gets too wide. i found this out by accident when testing on mobile! */
+  overflow: hidden;
+}
+
+.home-left {
+  flex: 1;
+  /* min-width: 0 is this weird css trick that took me SO LONG to figure out.
+     basically flexbox containers don't let their content shrink smaller than
+     the content size, so long text breaks the layout. setting min-width: 0
+     tells it "hey you can actually shrink!" saved my life when making responsive */
+  min-width: 0;
+}
+
+/* Main heading style */
+.home-left h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 12px;
+  color: var(--text-main);
+}
+
+.home-left h1 span {
+  color: var(--primary);
+}
+
+.tagline {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.intro-text {
+  font-size: 1rem;
+  color: var(--text-muted);
+  max-width: 480px;
+  margin-bottom: 36px;
+  line-height: 1.8;
+}
+
+/* i need buttons to sit next to each other on big screens but when the screen gets
+   smaller i want them to wrap to the next line. flex-wrap does this automatically!
+   way easier than media queries for this simple layout */
+.button-group {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Right column - profile photo */
+.home-right {
+  flex: 1;
+  /* min-width 0 makes flex items to shrink properly */
+  min-width: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-img {
+  /* i used max-width instead of fixed width so the image scales with screen size
+     but never gets too huge. aspect-ratio keeps it at the right proportion without
+     needing height calculation stuff */
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  aspect-ratio: 9 / 10;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15);
+  background-color: var(--primary-light);
+}
+
+/* ===================================
+   ABOUT PAGE
+   ============= */
+
+/* i wanted the about page to look fancy, so the photo sticks to the side while you
+   read the bio, then when you scroll past it disappears and the skills table takes up
+   the full width. this makes the page feel more interactive and modern */
+.about-container {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+  margin-bottom: 60px;
+}
+
+/* AI-assisted: I used Copilot to understand how position: sticky works,
+   then implemented and adjusted the layout manually to ensure it behaves
+   correctly within the container */
+
+/* position: sticky makes the image stay visible while you scroll through the bio text.
+   top: 100px gives it some space from the navbar (which is 64px tall so 100px is safe).
+   flex-shrink: 0 stops the image from getting squeezed by flexbox. cool feature! 
+   To do this sticky feature I took help from Copilot*/
+.about-left {
+  width: 300px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 100px;
+}
+
+.about-img {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 24px var(--shadow);
+  background-color: var(--primary-light);
+}
+
+/* Right column: bio text only */
+.about-right {
+  flex: 1;
+  /* min-width 0 prevents text overflowing the flex container */
+  min-width: 0;
+}
+
+.about-right h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: var(--text-main);
+}
+
+.bio-text p {
+  margin-bottom: 16px;
+  color: var(--text-muted);
+  font-size: 0.98rem;
+}
+
+/* Timeline section appears below the two-column bio and uses full width. */
+#timeline {
+  margin-bottom: 48px;
+}
+
+/* Timeline heading style for section hierarchy. */
+#timeline h2 {
+  font-size: 1.5rem;
+  margin-bottom: 24px;
+  color: var(--text-main);
+}
+/* AI-assisted: got the idea of using a left border accent for milestone cards
+   from AI suggestions and then customised spacing, colors, and layout manually of my choice */
+
+/* Milestone card with left accent and year + text layout. */
+.milestone {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  padding: 16px 20px;
+  /* with the help of Copilot I created a design
+   of left border for the card. */
+  border-left: 4px solid var(--primary);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+/* Fixed-width year keeps milestone text aligned across rows. */
+.milestone-year {
+  font-weight: 700;
+  color: var(--primary);
+  font-size: 0.9rem;
+  min-width: 50px;
+  padding-top: 2px;
+}
+
+/* Milestone description text style. */
+.milestone-text {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* skills are shown in a table - it organizes them nicely with categories */
+#skills-table-wrapper {
+  margin-top: 48px;
+  overflow-x: auto; /* Mobile: make table scroll horizontally */
+}
+
+#skills-table-wrapper h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: var(--text-main);
+}
+
+#skills-table {
+  width: 100%;
+  border-collapse: collapse;
+  /* removes gaps between table cells */
+  background-color: var(--bg-white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 2px 8px var(--shadow);
+  font-size: 0.9rem;
+}
+
+#skills-table th {
+  background-color: var(--primary);
+  color: white;
+  padding: 14px 16px;
+  text-align: left;
+  font-weight: 600;
+}
+
+#skills-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-muted);
+  font-weight: 400;
+  vertical-align: middle;
+}
+
+#skills-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* AI-assisted: used AI to understand how rowspan affects table structure,
+   then applied advanced CSS selectors to correctly style only category cells */
+
+/* okay so this took me FOREVER to fix. my table has rowspan because some categories
+   have multiple skills but i wanted those category names bold and NOT the skill names.
+   the problem was td:first-child picks the first cell of every row, which was
+   sometimes a skill not a category! so i use td[rowspan] for category cells with rowspan,
+   and td:first-child:nth-last-child(4) for single categories (because there's always 4 cols).
+   CSS selectors can be weird when HTML structures get complex! Finally solved using Copilot */
+#skills-table td[rowspan],
+#skills-table tbody tr > td:first-child:nth-last-child(4) {
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.skill-level {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.level-beginner {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.level-intermediate {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.level-advanced {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+/* ===================================
+   PROJECTS PAGE
+   ================== */
+.page-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.page-header h1 {
+  font-size: 2.2rem;
+  color: var(--text-main);
+  margin-bottom: 10px;
+}
+
+.page-header p {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+/* AI-assisted: learned how to use CSS Grid for equal-width responsive columns
+   using AI explanation, then implemented and adjusted layout and spacing manually */
+
+/* grid vs flexbox... i tried flexbox first but i wanted all cards to be the same size
+   in 3 columns. grid is perfect for this because it forces equal column widths.
+   flexbox would need wrapper hacks to make this work. repeat(3, 1fr) means
+   3 equal columns that share the space fairly */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* Each project card */
+.project-card {
+  background-color: var(--bg-white);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px var(--shadow);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  /* when you hover it lifts up a little (translateY -5px = move up 5 pixels) and
+     the shadow gets bigger which makes it look like it's floating. the border color
+     also changes to light blue. the cool part is it all happens smooth because
+     of the transition property, nothing just snaps */
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(59, 130, 246, 0.15);
+  border-color: var(--primary-light);
+}
+
+.project-img {
+  width: 100%;
+  height: 180px;
+  object-fit: fill;
+  display: block;
+  background-color: var(--primary-light);
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-body h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: var(--text-main);
+}
+
+.card-body p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.project-role {
+  font-size: 0.82rem;
+  color: var(--primary);
+  font-weight: 600;
+  margin-bottom: 12px;
+  display: block;
+}
+
+/* Tech tag badges */
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.tech-tags span {
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.lessons-learned {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-style: italic;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+  margin-top: 8px;
+}
+
+/* ===================================
+   CONTACT PAGE
+   ============== */
+.contact-wrapper {
+  /* form on the left and contact info on the right. flexbox just puts them beside
+     each other and on mobile media query changes it to flex-direction: column */
+  display: flex;
+  gap: 48px;
+  align-items: flex-start;
+}
+
+/* Contact form section */
+.contact-form-section {
+  flex: 2;
+}
+
+.contact-form-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+.contact-form-section > p {
+  color: var(--text-muted);
+  margin-bottom: 28px;
+}
+
+/* The actual form */
+#contact-form {
+  background-color: var(--bg-white);
+  padding: 32px;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+#contact-form fieldset {
+  border: none;
+  margin-bottom: 24px;
+}
+
+#contact-form legend {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  /* width: 100% makes inputs stretch to fill the box. 2px border is thick enough
+     to see. font-family: inherit stops inputs from going monospace which looks ugly.
+     transition makes the border color change smoothly when you focus */
+  width: 100%;
+  padding: 10px 14px;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: var(--text-main);
+  background-color: var(--bg-white);
+  transition: border-color 0.3s ease;
+}
+/* when you click on an input field, the border turns blue so you know which field
+   you're in. outline: none removes the default browser outline because it looks ugly.
+   instead i just change the border color to blue which looks cleaner */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  background-color: white;
+}
+
+.form-group textarea {
+  height: 130px;
+  resize: vertical;
+}
+
+/* Radio buttons group */
+.radio-group {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.radio-group input[type="radio"] {
+  width: auto;
+  accent-color: var(--primary);
+}
+
+/* Checkbox */
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.checkbox input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary);
+  flex-shrink: 0;
+}
+
+.checkbox span {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+/* Form button row */
+.form-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+/* Reset button style */
+.btn-reset {
+  background-color: transparent;
+  color: var(--text-muted);
+  border: 2px solid var(--border);
+  padding: 12px 28px;
+  border-radius: var(--radius);
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-reset:hover {
+  border-color: var(--text-muted);
+  color: var(--text-main);
+}
+
+/* Contact info sidebar */
+.contact-info {
+  flex: 1;
+  min-width: 220px;
+}
+
+.contact-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: var(--text-main);
+}
+
+.info-box {
+  background-color: var(--bg-white);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: 0 4px 12px var(--shadow);
+  margin-bottom: 20px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.info-item:last-child {
+  margin-bottom: 0;
+}
+
+.info-icon {
+  width: 36px;
+  height: 36px;
+  background-color: var(--primary-light);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--primary);
+  font-size: 1rem;
+}
+
+/* ===================================
+   INTERESTS / BLOG PAGE
+   ======================= */
+.interests-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Each blog post entry */
+.blog-post {
+  background-color: var(--bg-white);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px var(--shadow);
+  overflow: hidden;
+  margin-bottom: 36px;
+  border: 1px solid var(--border);
+  transition: box-shadow 0.3s ease;
+}
+
+/* Used here a soft glowing hover effect 
+so that it looks cool */
+.blog-post:hover {
+  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.12);
+}
+
+.post-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  background-color: var(--primary-light);
+}
+
+.post-content {
+  padding: 24px;
+}
+
+.post-content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+  color: var(--text-main);
+}
+
+.post-date {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+  display: block;
+}
+
+.post-content p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+/* YouTube embed wrapper which makes it responsive */
+.video-wrapper {
+  margin: 48px 0;
+  text-align: center;
+}
+
+.video-wrapper h3 {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  color: var(--text-main);
+}
+
+/* AI-assisted: learned the 16:9 aspect ratio technique (padding-bottom: 56.25%)
+   using AI explanation and applied it to make the embedded YouTube video responsive */
+   
+/* video embed trick - padding-bottom: 56.25% is the 16:9 aspect ratio expressed as
+   a percentage. padding is calculated on width which is why this works! the iframe
+   stretches to fill it. learned this after using ai */
+.video-responsive {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 24px var(--shadow);
+}
+
+.video-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ======================================================
+   TESTING REPORT & REFLECTION PAGES
+   ================================== */
+.report-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.report-section {
+  background-color: var(--bg-white);
+  border-radius: var(--radius);
+  padding: 32px;
+  margin-bottom: 28px;
+}
+
+.report-section h2 {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  color: var(--text-main);
+  border-bottom: 2px solid var(--primary-light);
+  padding-bottom: 12px;
+}
+
+.report-section p,
+.report-section li {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+  line-height: 1.8;
+}
+
+.report-section ul,
+.report-section ol {
+  padding-left: 24px;
+}
+
+/* Test results table */
+.test-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  margin-top: 12px;
+}
+
+.test-table th {
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+  padding: 12px 14px;
+  text-align: left;
+  font-weight: 600;
+}
+
+.test-table td {
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-muted);
+  vertical-align: top;
+}
+
+.test-table tr:last-child td {
+  border-bottom: none;
+}
+
+.status-pass {
+  color: #16a34a;
+  font-weight: 700;
+}
+
+.status-fail {
+  color: #dc2626;
+  font-weight: 700;
+}
+
+/* Page title inside a section */
+.section-title {
+  font-size: 2rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.section-subtitle {
+  color: var(--text-muted);
+  margin-bottom: 36px;
+  font-size: 0.95rem;
+}
+
+/* ===================================
+   FOOTER
+   ========== */
+footer {
+  background-color: var(--bg-white);
+  border-top: 1px solid var(--border);
+  text-align: center;
+  padding: 24px;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-top: 60px;
+}
+
+/* ==================================================
+   RESPONSIVE BREAKPOINTS
+   Three tiers: desktop → tablet → mobile
+   ============================================*/
+
+/* ===========================================
+   LARGE TABLET (769px - 1024px)
+   Side-by-side still works but tighter
+   =====================================*/
+@media (max-width: 1024px) {
+  .container {
+    padding: 48px 32px;
+  }
+
+  /* Projects - 2 columns on tablet */
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  /* Slightly smaller heading */
+  .home-left h1 {
+    font-size: 2.4rem;
+  }
+
+  /* About - smaller sticky image at tablet */
+  .about-left {
+    width: 220px;
+  }
+
+  /* Contact sidebar - put it beside form in a row */
+  .contact-info {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .info-box {
+    flex: 1;
+    min-width: 200px;
+  }
+}
+
+/* ==============================================
+   MOBILE (max 768px)
+   Everything stacks, full-width layout
+   ========================================== */
+@media (max-width: 768px) {
+  /* NAV - logo on top, links below */
+  .main-nav {
+    padding: 0 16px;
+  }
+
+  .nav-inner {
+    flex-direction: column;
+    height: auto;
+    padding: 12px 0 10px;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .nav-logo {
+    font-size: 1.1rem;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .nav-links a {
+    padding: 6px 12px;
+    font-size: 0.88rem;
+  }
+
+  /* General container */
+  .container {
+    padding: 28px 16px;
+  }
+
+  /* HOME PAGE */
+  .home-wrapper {
+    flex-direction: column;
+    min-height: auto;
+    gap: 36px;
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
+
+  .home-left h1 {
+    font-size: 1.85rem;
+    line-height: 1.25;
+  }
+
+  .tagline {
+    font-size: 1rem;
+  }
+
+  .intro-text {
+    font-size: 0.93rem;
+    max-width: 100%;
+    margin-bottom: 24px;
+  }
+
+  /* Buttons go full width on mobile */
+  .button-group {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .button-group .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* ABOUT PAGE */
+  .about-container {
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 36px;
+  }
+
+  /* On mobile the image is no longer sticky - just flows with content */
+  .about-left {
+    width: 100%;
+    position: static;
+    max-width: 260px;
+    margin: 0 auto;
+  }
+
+  .about-right h2 {
+    font-size: 1.5rem;
+  }
+
+  #timeline h2,
+  #skills-table-wrapper h2 {
+    font-size: 1.3rem;
+  }
+
+  /* Timeline milestones */
+  .milestone {
+    flex-direction: column;
+    gap: 4px;
+    padding: 14px 16px;
+  }
+
+  /* PROJECTS PAGE */
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .page-header h1 {
+    font-size: 1.7rem;
+  }
+
+  /* CONTACT PAGE */
+  .contact-wrapper {
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .contact-form-section h2 {
+    font-size: 1.5rem;
+  }
+
+  #contact-form {
+    padding: 20px 16px;
+  }
+
+  .contact-info {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .form-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .form-buttons .btn,
+  .form-buttons .btn-reset {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* INTERESTS PAGE */
+  .interests-wrapper {
+    max-width: 100%;
+  }
+
+  /* SKILLS TABLE - horizontal scroll */
+  #skills-table-wrapper {
+    overflow-x: auto;
+  }
+
+  #skills-table {
+    min-width: 540px;
+  }
+
+  /* REPORT PAGES */
+  .report-section {
+    padding: 20px 16px;
+  }
+
+  .report-section h2 {
+    font-size: 1.2rem;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .test-table {
+    font-size: 0.82rem;
+    overflow-x: auto;
+    display: block;
+    width: 100%;
+  }
+}
