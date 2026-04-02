@@ -1,7 +1,9 @@
 Name: Nafiz Ahmed Sargis
 Student ID: U1181036
 
-Video Link:
+Live Demo: [Visit Website](https://nafizahmedsargis.vercel.app) 
+
+Video Link: [Project Demonstration Video](https://drive.google.com/file/d/1DBYDKTSECvCB0ZWtooh5YUEfHxyC8BfG/view?usp=sharing)
 
 
 Browsers and Devices Tested:

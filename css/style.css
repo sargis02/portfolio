@@ -923,10 +923,10 @@ footer {
    ============================================*/
 
 /* ===========================================
-   LARGE TABLET (769px - 1024px)
+   LARGE TABLET (768px - 1023px)
    Side-by-side still works but tighter
    =====================================*/
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
   .container {
     padding: 48px 32px;
   }
@@ -961,10 +961,10 @@ footer {
 }
 
 /* ==============================================
-   MOBILE (max 768px)
+   MOBILE (max 767px)
    Everything stacks, full-width layout
    ========================================== */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   /* NAV - logo on top, links below */
   .main-nav {
     padding: 0 16px;

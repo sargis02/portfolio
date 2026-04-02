@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing Report - Nafiz Ahmed Sargis</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- This page is NOT in the nav - it's just for the assignment submission. 
+     Used the fixed nav to jump directly on home page.-->
+    <nav class="main-nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">Nafiz Ahmed Sargis</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="interests.html">Interests</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="report-wrapper">
+
+            <h1 class="section-title">Testing Report</h1>
+            <p class="section-subtitle">Web Technology 1 : Client Side | Nafiz Ahmed Sargis</p>
+
+            <!-- Test plan section -->
+            <div class="report-section">
+
+                <p>
+                    Testing was carried out across multiple browsers and devices. I used Chrome,
+                    Firefox, and Edge on desktop, and tested on my Android using Chrome.
+                    I also used Chrome DevTools to simulate different screen sizes.
+                </p>
+            </div>
+
+            <!-- Test Environment -->
+            <div class="report-section">
+                <h2>1. Test Environment</h2>
+                <ul>
+                    <li><strong>Desktop OS:</strong> Windows 11</li>
+                    <li><strong>Browsers tested:</strong> Chrome, Firefox, Edge</li>
+                    <li><strong>Mobile device:</strong> Iqoo Z9 Turbo, Chrome</li>
+                    <li><strong>Screen sizes simulated:</strong> 320px, 480px, 768px, 1024px, 1440px</li>
+                    <li><strong>Tools used:</strong> Chrome DevTools, W3C HTML Validator, CSS Validator</li>
+                    <li><strong>AI tools:</strong> ChatGPT, GitHub Copilot (used for learning and debugging)</li>
+                </ul>
+            </div>
+
+            <!-- Functional testing table -->
+            <div class="report-section">
+                <h2>2. Functional Testing</h2>
+                <p>I tested all the main features and interactions on each page:</p>
+
+                <table class="test-table">
+                    <thead>
+                        <tr>
+                            <th>Test ID</th>
+                            <th>Feature Tested</th>
+                            <th>Expected Result</th>
+                            <th>Actual Result</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>T01</td>
+                            <td>Navigation links work on all pages</td>
+                            <td>Each link takes user to the correct page</td>
+                            <td>All 5 nav links work correctly on all pages</td>
+                            <td class="status-pass">PASS</td>
+                        </tr>
+                        <tr>
+                            <td>T02</td>
+                            <td>Active nav link highlighting</td>
+                            <td>Current page link is highlighted in blue</td>
+                            <td>Active class applied correctly on each page</td>
+                            <td class="status-pass">PASS</td>
+                        </tr>
+                        <tr>
+                            <td>T03</td>
+                            <td>"View My Work" button on Home page</td>
+                            <td>Clicking navigates to projects.html</td>
+                            <td>Works correctly</td>
+                            <td class="status-pass">PASS</td>
+                        </tr>
+                        <tr>
+                            <td>T04</td>
+                            <td>"Contact Me" button on Home page</td>
+                            <td>Clicking navigates to contact.html</td>
+                            <td>Works correctly</td>
+                            <td class="status-pass">PASS</td>
+                        </tr>
+                        <tr>
+                            <td>T05</td>
+                            <td>Contact form - required fields validation</td>
+                            <td>Form won't submit if Name, Email, Phone or Message is empty</td>
+                            <td>Browser validation works for all required fields</td>
+                            <td class="status-pass">PASS</td>
+                        </tr>
+                        <tr>
+                            <td>T06</td>
+                            <td>Contact form - email validation</td>
+                            <td>Only valid email format accepted</td>
+                            <td>Browser rejects invalid email format</td>
+                            <td class="status-pass">PASS</td>
+                        </tr>
+                        <tr>
+                            <td>T07</td>
+                            <td>Contact form - reset button</td>
+                            <td>Clears all form fields</td>
+                            <td>All fields cleared when reset is clicked</td>
+                            <td class="status-pass">PASS</td>
+                        </tr>
+                        <tr>
+                            <td>T08</td>
+                            <td>YouTube embed on Interests page</td>
+                            <td>Video loads and plays correctly</td>
+                            <td>Video loads and is responsive, plays in-page</td>
+                            <td class="status-pass">PASS</td>
+                        </tr>
+                        <tr>
+                            <td>T09</td>
+                            <td>Sticky image on About page</td>
+                            <td>Image stays fixed while right column scrolls</td>
+                            <td>Works on desktop; disabled on mobile (correct)</td>
+                            <td class="status-pass">PASS</td>
+                        </tr>
+                        <tr>
+                            <td>T10</td>
+                            <td>Skills table horizontal scroll on mobile</td>
+                            <td>Table scrolls horizontally on small screens</td>
+                            <td>Horizontal scroll works, no overflow outside box</td>
+                            <td class="status-pass">PASS</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Responsive design testing -->
+            <div class="report-section">
+                <h2>3. Responsive Design Testing</h2>
+                <p>I tested the website at the following breakpoints using Chrome DevTools:</p>
+
+                <table class="test-table">
+                    <thead>
+                        <tr>
+                            <th>Screen Size</th>
+                            <th>Device Target</th>
+                            <th>Layout Behaviour</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>320px</td>
+                            <td>Small Mobile</td>
+                            <td>Single column, stacked layout, no overflow</td>
+                            <td class="status-pass">PASS</td>
+                        </tr>
+                        <tr>
+                            <td>480px</td>
+                            <td>Mobile</td>
+                            <td>Single column, content readable, buttons wrap nicely</td>
+                            <td class="status-pass">PASS</td>
+                        </tr>
+                        <tr>
+                            <td>768px</td>
+                            <td>Tablet</td>
+                            <td>2-column projects grid, about layout adjusts</td>
+                            <td class="status-pass">PASS</td>
+                        </tr>
+                        <tr>
+                            <td>1024px</td>
+                            <td>Laptop</td>
+                            <td>3-column projects, full layout visible</td>
+                            <td class="status-pass">PASS</td>
+                        </tr>
+                        <tr>
+                            <td>1440px</td>
+                            <td>Desktop</td>
+                            <td>3-column projects grid, full 2-column layouts</td>
+                            <td class="status-pass">PASS</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Validation testing -->
+            <div class="report-section">
+                <h2>4. Code Validation</h2>
+                <p>I ran all pages through the W3C HTML Validator and CSS Validator:</p>
+                <ul>
+                    <li><strong>index.html:</strong> No errors ✅</li>
+                    <li><strong>about.html:</strong> No errors ✅</li>
+                    <li><strong>projects.html:</strong> No errors ✅</li>
+                    <li><strong>contact.html:</strong> No errors ✅</li>
+                    <li><strong>interests.html:</strong> No errors ✅</li>
+                    <li><strong>style.css:</strong> No errors just got 104 warnings ✅</li>
+                </ul>
+            </div>
+
+            <!-- Browser compatibility -->
+            <div class="report-section">
+                <h2>5. Browser Compatibility</h2>
+                <p>The site was tested and works correctly in:</p>
+                <ul>
+                    <li>✅ Google Chrome (Windows &amp; Android)</li>
+                    <li>✅ Mozilla Firefox (Windows)</li>
+                    <li>✅ Microsoft Edge (Windows)</li>
+                </ul>
+                <p>
+                    No major differences were observed between browsers. CSS Grid and Flexbox
+                    are well supported in all modern browsers so the layout is consistent.
+                </p>
+            </div>
+
+            <!-- Summary -->
+            <div class="report-section">
+                <h2>6. Summary</h2>
+                <p>
+                    All 10 functional tests passed and the website displays correctly across
+                    all tested browsers and screen sizes. The site is fully responsive and meets
+                    the assignment requirements.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>Built by Nafiz Ahmed Sargis &copy; 2026 </p>
+    </footer>
+
+</body>
+</html>

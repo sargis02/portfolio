@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reflection - Nafiz Ahmed Sargis</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- This page is NOT in the nav - it's just for the assignment submission
+     And used this fixed nav bar to jump over to the projects pages. -->
+    <nav class="main-nav">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo">Nafiz Ahmed Sargis</a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="interests.html">Interests</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="report-wrapper">
+        <h1 class="section-title">Personal Reflection</h1>
+        <p class="section-subtitle">
+          Web Technology 1 : Client Side | Nafiz Ahmed Sargis
+        </p>
+
+        <!-- What I planned, Challenges and Problem Solving -->
+        <div class="report-section">
+          <h2>What I Set Out to Build And The Challenges I Faced</h2>
+          <p>
+            In this assignment, I was interested in designing a clean-looking
+            multi-page portfolio web site, but one which I would actually use,
+            and not one that I will post and forget. My primary requirements
+            were: two column home page responsive, a sticky image on the about
+            page, a table of skills with rowspan, a proper contact form with
+            proper validation, a grid of project cards, and a blog format on the
+            page interests. I was also required to develop a testing report and
+            this reflection page that are not visible in the main navigation.
+          </p>
+          <p>
+            This course is a learning experience in which I used my knowledge in
+            HTML5 and CSS3 to create a personal portfolio site. The task of
+            turning the site into a complete responsive site was the most
+            challenging. CSS Flexbox and Grid operate in different ways
+            depending on layout, and I frequently found that correcting one
+            problem would cause another problem. As an example, the sticky
+            position was not working when I adjusted the mobile layout on the
+            About page. I also found out that position: sticky does not work
+            correctly within the context of a container with overflow set and
+            this led me to learn about how the layout context influences
+            positioning.
+          </p>
+          <p>
+            Another problem of mine was the navigation bar, which on smaller
+            screens was acting strangely and even vanishing upon horizontal
+            scroll of the table displaying the skills. Another problem was the
+            project cards on the Projects page, where the layout was affected by
+            the overflow of text and irregular size. Also, the skills table with
+            rowspan was not easy to understand and particularly to determine
+            which ones to get rid of. Sketching the table structure on paper
+            made me better understand it and resolve the problem.
+          </p>
+          <p>
+            Embedding a responsive YouTube video was another challenge. The
+            normal iframe with the width attribute of 100 percent did not scale
+            correctly since the height was fixed. I also learned and used the
+            padding-bottom technique of 16:9, which enabled the video to be
+            resized to its appropriate size in various devices. To address these
+            issues, I applied online resources, tutorials, and AI tools to help
+            me in the understanding process and enhance my implementation. The
+            process helped me a lot in enhancing my skills in debugging and
+            solving problems.
+          </p>
+        </div>
+
+        <!-- Design decisions I am most proud of -->
+        <div class="report-section">
+          <h2>Design That I Am Most Proud Of</h2>
+          <p>
+            I am very satisfied with the overall design. At the beginning, I
+            also wasted a lot of time in choosing a colour scheme and font,
+            which I settled on Poppins in Google Fonts and blue / grey palette,
+            which I consider clean, but not boring.
+          </p>
+          <p>
+            The design element that I am the most proud of is the sticky image
+            on the About page. As I viewed other portfolio websites, I noticed
+            that most of the designs were similar. I felt like making something
+            more interactive and personal. I thought that by reading my
+            biography, a person could also view my photo to link to me. This
+            idea was influenced by the concept of sticky navigation, but I
+            modified it in my own way. This feature was technically challenging,
+            but its successful implementation made my portfolio more interesting
+            and original.
+          </p>
+          <p>
+            CSS Grid is a concept that I found problematic during Year 1 but
+            eventually understood during this project. The projects page is
+            built with the correct CSS Grid, starting with 3 columns on desktop
+            to 1 column on mobile, and it behaves as expected. I am glad that
+            worked out.
+          </p>
+        </div>
+
+        <!-- What I'd do differently -->
+        <div class="report-section">
+          <h2>What I'd Do Differently</h2>
+          <p>
+            If I were to start this project again, I would plan my CSS structure
+            more carefully from the beginning. I used CSS variables later in the
+            development process, and it meant I needed to refactor much of my
+            code. Another strategy I would implement is a mobile-first strategy
+            rather than a desktop-first strategy since this would enhance
+            efficiency and response. I would also like to upgrade the site with
+            JavaScript functionality, including making the contact form fully
+            operational. These would enhance the project and make it
+            professional and scalable.
+          </p>
+        </div>
+
+        <!-- What I learned -->
+        <div class="report-section">
+          <h2>What I Learned</h2>
+          <ul>
+            <li>
+              CSS custom properties (variables) are incredibly useful for
+              keeping a consistent colour scheme across multiple pages
+            </li>
+            <li>
+              How <code>position: sticky</code> actually works and why overflow
+              on parent containers can break it
+            </li>
+            <li>
+              The 16:9 percentage-padding trick for responsive iframe embeds
+            </li>
+            <li>
+              HTML table <code>rowspan</code> and
+              <code>colspan</code> attributes
+            </li>
+            <li>
+              Proper form structure with <code>fieldset</code> and
+              <code>legend</code>
+            </li>
+            <li>
+              How to use CSS Grid for a card layout with responsive columns
+            </li>
+            <li>
+              The importance of planning the layout on paper before coding it
+            </li>
+          </ul>
+        </div>
+
+        <!-- Final thoughts -->
+        <div class="report-section">
+          <h2>Final Thoughts</h2>
+          <p>
+            I am quite satisfied with this project. It is the fullest and
+            refined site that I made so far and I really intend to keep updating
+            it when doing more projects. I have already demonstrated it to
+            several people and received positive responses which was motivating.
+          </p>
+          <p>
+            The field that I am enjoying the most at the moment and this
+            assignment has solidified that. I now feel a lot more at ease with
+            HTML and CSS than I did at the beginning of Year 1, and I look
+            forward to transitioning into JavaScript frameworks such as React
+            with more seriousness in the future.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>Built by Nafiz Ahmed Sargis &copy; 2026</p>
+    </footer>
+  </body>
+</html>
